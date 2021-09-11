@@ -13,6 +13,8 @@ import kotlin.properties.Delegates
 internal var app: Application by Delegates.notNull()
 
 class GlobalConfiguration : ConfigModule {
+    override fun getPriority() = 5
+
     override fun injectApp(application: Application) {
         app = application
     }
